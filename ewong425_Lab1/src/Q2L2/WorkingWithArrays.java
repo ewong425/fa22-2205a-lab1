@@ -1,6 +1,5 @@
 package Q2L2;
 import java.util.Scanner;
-
 public class WorkingWithArrays {
     public static void main(String[] args) {
         int arraySize; int val;
@@ -16,15 +15,20 @@ public class WorkingWithArrays {
         mma5MethodEthan(userInput);
     }
     public static double[] mma5MethodEthan(int[] input) {
-        int count = 0; double[] arr = new double[input.length];
-        Scanner sc = new Scanner(System.in);
+        int count = 0; int min = 0; int max = 0; int avg = 0; int prev = 0;
+
         for(int i=0; i<input.length; i++) {
-            for(int k=0; k<input.length; k++) {
-                if(input[i]%5==0) {
-                    arr[k] = input[i];
+            if(input[i]%5 == 0) {
+                prev = input[i];
+                avg += input[i];
+                max = Math.max(prev, max);
+                if(min == 0) {
+                    min = prev;
+                } else {
+                    min = Math.min(min, prev);
                 }
+                count++;
             }
         }
-        return arr;
     }
 }
