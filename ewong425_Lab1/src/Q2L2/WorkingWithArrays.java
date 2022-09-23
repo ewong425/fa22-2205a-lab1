@@ -25,5 +25,6 @@ public class WorkingWithArrays {
                 }
             }
         }
+        return arr;
     }
 }
