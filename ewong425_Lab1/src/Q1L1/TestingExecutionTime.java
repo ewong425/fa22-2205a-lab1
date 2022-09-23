@@ -13,7 +13,7 @@ public class TestingExecutionTime {
             System.out.println("Enter an a positive integer: ");
             val = sc.nextInt();
         }
-        //Iterative through main method
+        //Iterative factorial through main method
         timeStart = System.nanoTime();
         while(i<=val) {
             result = i*result;
@@ -22,13 +22,13 @@ public class TestingExecutionTime {
         timeEnd = System.nanoTime();
         time = timeEnd-timeStart;
         System.out.printf("Result is: %.0e Time taken: %.0f \n", result, time);
-        //Iterative method
+        //Iterative factorial through method
         timeStart = System.nanoTime();
         result = iterativeFactorial(val);
         timeEnd = System.nanoTime();
         time = timeEnd-timeStart;
         System.out.printf("Result is: %.0e Time taken: %.0f \n", result, time);
-        //Recursive method
+        //Recursive factorial through method
         timeStart = System.nanoTime();
         result = recursiveFactorial(val);
         timeEnd = System.nanoTime();
