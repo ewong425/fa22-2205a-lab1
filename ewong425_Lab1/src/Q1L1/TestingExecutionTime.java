@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class TestingExecutionTime {
     public static void main(String[] args) {
         //declare variables
-        double result = 1; int i = 1; long timeStart; long timeEnd; double time;
+        double result = 1; int i = 1; long timeStart; long timeEnd; double time; double conversion = 10E-9;
         Scanner sc = new Scanner(System.in);
         header(1);
         System.out.println("Enter a value to calculate the factorial of: \n" );
@@ -20,20 +20,20 @@ public class TestingExecutionTime {
             i++;
         }
         timeEnd = System.nanoTime();
-        time = timeEnd-timeStart;
-        System.out.printf("Result is: %.0e Time taken: %.0f \n", result, time);
+        time = (timeEnd-timeStart)*conversion;
+        System.out.printf("Result is: %.0e Time taken: %.0e sec \n", result, time);
         //Iterative factorial through method
         timeStart = System.nanoTime();
         result = iterativeFactorial(val);
         timeEnd = System.nanoTime();
-        time = timeEnd-timeStart;
-        System.out.printf("Result is: %.0e Time taken: %.0f \n", result, time);
+        time = (timeEnd-timeStart)*conversion;
+        System.out.printf("Result is: %.0e Time taken: %.0e sec \n", result, time);
         //Recursive factorial through method
         timeStart = System.nanoTime();
         result = recursiveFactorial(val);
         timeEnd = System.nanoTime();
-        time = timeEnd-timeStart;
-        System.out.printf("Result is: %.0e Time taken: %.0f \n", result, time);
+        time = (timeEnd-timeStart)*conversion;
+        System.out.printf("Result is: %.0e Time taken: %.0e sec \n", result, time);
         footer(1);
     }
     public static void header(int n) {
