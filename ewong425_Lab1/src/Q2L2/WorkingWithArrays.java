@@ -54,7 +54,6 @@ public class WorkingWithArrays {
         } else {
             System.out.println("In the array, there was no number divisble by 5");
         }
-
         return arr;
     }
 
