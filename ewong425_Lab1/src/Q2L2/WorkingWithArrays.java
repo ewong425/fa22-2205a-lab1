@@ -2,6 +2,7 @@ package Q2L2;
 import java.util.Scanner;
 public class WorkingWithArrays {
     public static void main(String[] args) {
+        //declare variables
         int arraySize; int val; int i = 0;
         header(1);
 
@@ -9,20 +10,24 @@ public class WorkingWithArrays {
         System.out.println("Please enter an array size: ");
         arraySize = sc.nextInt();
         int [] userInput = new int[arraySize];
+        //inputting array elements
         while(i != arraySize) {
             System.out.println("Please enter the " + (i+1) + " value");
             val = sc.nextInt();
             userInput[i] = val;
             i++;
         }
+        //calling mma5method
         System.out.println("Here is the result:");
         mma5MethodEthan(userInput);
         footer(1);
     }
     public static double[] mma5MethodEthan(int[] input) {
+        //initalizing variables
         double count = 0; int min = 0; int max = 0;
         double avg = 0; int prev = 0; double total = 0;
         double[] arr = new double[4];
+        //interating through each index and comparing them to prev using math.min and math.max
         for (int i = 0; i < input.length; i++) {
             if (input[i] % 5 == 0) {
                 prev = input[i];
@@ -36,15 +41,18 @@ public class WorkingWithArrays {
                 count++;
             }
         }
+        //making sure to return 0 for the average not NAN
         if (count == 0) {
             avg = 0;
         } else {
             avg = total / count;
         }
+        //adding inputs to arr
         arr[0] = max;
         arr[1] = min;
         arr[2] = avg;
         arr[3] = 251205049;
+        //output when there are numbers divisble by 5
         if (count > 0) {
             System.out.println("Ethan found " + count + " numbers divisble-by-5");
             System.out.println("The max is " + max);
